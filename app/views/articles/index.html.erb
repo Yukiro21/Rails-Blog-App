@@ -1,0 +1,19 @@
+<section class="top">
+ <h1 style="color: #e0e0e0;letter-spacing: 20px">POST</h1>
+    
+</section>
+<section class="articles">
+    <% @articles.each do |article| %>
+        <% unless article.archived? %>
+            <div class="summary">
+                <h4><%= article.title %></h2>
+                <p>
+                    <%= truncate(article.body, length: 50, separator: ' ') %>
+                </p>
+                <%= link_to "Read More", article, class: "button" %>
+            </div>
+            <% end %>
+    <% end %>
+</section> 
+
+
